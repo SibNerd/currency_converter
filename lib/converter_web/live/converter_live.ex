@@ -6,7 +6,7 @@ defmodule ConverterWeb.ConverterLive do
   @impl true
   def mount(_params, _session, socket) do
 
-    {:ok, assign(socket)}
+    {:ok, assign(socket， %{})}
   end
 
   def render(assigns) do
