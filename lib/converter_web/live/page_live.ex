@@ -21,11 +21,7 @@ defmodule ConverterWeb.PageLive do
   end
 
   def render(assigns) do
-  ~L"""
-  <h1>Текущий курс валют</h1>
-  <p>1 <%= results.dollar_name %> - <%= results.dollar_value %> рублей.</p>
-  <p>1 <%= results.euro_name %> - <%= results.euro_value %> рублей.</p>
-  """
+    Phoenix.View.render(Converter.PageLive, "page_live.html", assigns)
   end
 
 end
