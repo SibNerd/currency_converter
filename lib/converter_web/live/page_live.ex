@@ -21,7 +21,18 @@ defmodule ConverterWeb.PageLive do
   end
 
   def render(assigns) do
-    Phoenix.View.render(ConverterWeb.PageLiveView, "page_live.html", assigns)
+    ~L"""
+      <section class="row">
+        <article class="column">
+          <h2>Курс доллара</h2>
+          <p><%= @results.dollar_info %></p>
+        </article>
+        <article class="column">
+          <h2>Курс евро</h2>
+          <p><%= @results.euro_info %></p>
+        </article>
+      </section>
+    """
   end
 
 end
