@@ -1,4 +1,4 @@
-defmodule Conv.Currency do
+defmodule Converter.Currency do
   def get_currencies() do
     result = "https://www.cbr-xml-daily.ru/daily_json.js"
     |> HTTPoison.get
