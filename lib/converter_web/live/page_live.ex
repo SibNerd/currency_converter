@@ -21,7 +21,7 @@ defmodule ConverterWeb.PageLive do
   end
 
   def render(assigns) do
-    Phoenix.View.render(Converter.PageLive, "page_live.html", assigns)
+    Phoenix.View.render(ConverterWeb.PageLiveView, "page_live.html", assigns)
   end
 
 end
