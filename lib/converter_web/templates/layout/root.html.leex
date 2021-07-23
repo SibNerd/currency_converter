@@ -15,7 +15,7 @@
         <nav role="navigation">
           <ul>
               <li><%= live_redirect "Главная", to: Routes.page_path(@conn, :index) %></li>
-              <li><%= live_redirect "Конвертер валют", to: Routes.converter_path(@conn, ConverterLive, :index)%></li>
+              <li><%= live_redirect "Конвертер валют", to: Routes.converter_path(@conn, :index)%></li>
           </ul>
         </nav>
       </section>
