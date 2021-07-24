@@ -1,12 +1,12 @@
 defmodule ConverterWeb.ConverterLive do
   use ConverterWeb, :live_view
 
-  alias Converter.{Currency}
+  alias Converter.{Convert}
 
   @impl true
   def mount(_params, _session, socket) do
-
-    {:ok, assign(socket, %{})}
+    currencies = Convert.get_currency_infos()
+    {:ok, assign(socket, currencies: currencies)}
   end
 
 end
