@@ -17,7 +17,7 @@ defmodule ConverterWeb.ConverterLive do
     currencies = Convert.get_currency_infos()
     for currency <- currencies do
       if currency["Name"] === name do
-        value = cuccency["Value"]
+        value = currency["Value"]
       end
     end
     
