@@ -14,9 +14,9 @@ defmodule ConverterWeb.ConverterLive do
 
   @impl true
   def handle_event("get_convertion", %{"converter" => %{"currency_amount" => amount, "currency_name" => name}}, socket) do
-    input = socket.assigns.currencies
+    input = get_in(socket, assigns)
     for cuccency <- input do
-      if currency["Name"] === name do
+      if currency["Name"] == name do
         value = cuccency["Value"]
       end
     end
