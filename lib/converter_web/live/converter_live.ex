@@ -14,7 +14,7 @@ defmodule ConverterWeb.ConverterLive do
 
   @impl true
   def handle_event("get_convertion", %{"converter" => %{"currency_amount" => amount, "currency_name" => name}}, socket) do
-    currency = Convert.get_currency_infos |> Enum.find(fn x -> x["Name"] == name end)
+    currency = socket.assigns.currencies |> Enum.find(fn x -> x["Name"] == name end)
     value = currency["Value"]
     result = value * amount
     {:noreply, assign(socket, convertion_result: result)}
