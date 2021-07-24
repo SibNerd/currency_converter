@@ -20,19 +20,4 @@ defmodule ConverterWeb.PageLive do
     {:ok, assign(socket, results: %{dollar_name: dollar_name, dollar_value: dollar_value, euro_name: euro_name, euro_value: euro_value})}
   end
 
-  def render(assigns) do
-    ~L"""
-      <section class="row">
-        <article class="column">
-          <h2>Курс доллара</h2>
-          <p><%= @results.dollar_value %></p>
-        </article>
-        <article class="column">
-          <h2>Курс евро</h2>
-          <p><%= @results.euro_value %></p>
-        </article>
-      </section>
-    """
-  end
-
 end

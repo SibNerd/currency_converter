@@ -9,15 +9,4 @@ defmodule ConverterWeb.ConverterLive do
     {:ok, assign(socket, %{})}
   end
 
-  def render(assigns) do
-    ~L"""
-      <section class="row">
-        <p>Заглушка для конвертера</p>
-      </section>
-    """
-  end
-
-
-
-
 end
