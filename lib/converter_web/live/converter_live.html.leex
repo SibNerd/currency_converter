@@ -1,3 +1,5 @@
+  
+  
   <table>
   <caption>Доступные курсы валют</caption>
   <tr>
@@ -8,8 +10,8 @@
   <%= for currency <- @currencies do %>
     <tr>
       <td><%= currency["CharCode"] %></td>
-      <td> <%= currency["Name"] %> </td>
-      <td> <%= currency["Value"] %> </td>
+      <td><%= currency["Name"] %></td>
+      <td><%= currency["Value"] %> рублей</td>
     </tr>
   <% end %>
 </table>
