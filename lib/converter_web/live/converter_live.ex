@@ -13,7 +13,7 @@ defmodule ConverterWeb.ConverterLive do
   end
 
   @impl true
-  def handle_event("get_convertion", %{"currency_amount" => amount, "currency_name" => name}, socket) do
+  def handle_event("get_convertion", %{"converter" => %{"currency_amount" => amount, "currency_name" => name}}, socket) do
     needed_currency = :ets.lookup(:currencies, name) |> List.first |> Tuple.to_list
     [_ | info] = needed_currency
     value = List.first(info) |> Map.fetch!("Value")
