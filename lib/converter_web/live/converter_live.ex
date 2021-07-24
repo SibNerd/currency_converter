@@ -18,7 +18,10 @@ defmodule ConverterWeb.ConverterLive do
     for currency <- currencies do
       if currency["Name"] == name do
         value = currency["Value"]
+      else
+        value = 0
       end
+
     end
     
     result = value * amount
