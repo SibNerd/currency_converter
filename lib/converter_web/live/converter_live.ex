@@ -19,6 +19,7 @@ defmodule ConverterWeb.ConverterLive do
       if currency["Name"] === name do
         value = cuccency["Value"]
       end
+    end
     
     result = value * amount
 
