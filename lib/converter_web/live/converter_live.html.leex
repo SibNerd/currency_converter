@@ -1,11 +1,11 @@
 <fieldset>
     <legend> Конвертировать валюту </legend>
-    <form phx-change="get_convertion">
+    <%= f = form_for :converter, "#", phx-change: "get_convertion">
         <label>
             Amount
             <div>
                 <%= number_input f, :currency_amount, "phx-debounce":  "100" %>
-                <%= select f, :currency_name, [currency["Name"] <- @currencies], "phx-throttle": "300" %>
+                <%= select f, :currency_name, Enum.map(@currencies, &(&1["Name"])), "phx-throttle": "300" %>
             </div><br>
         </label>
         <output> <%= @convertion_result %> рублей.</output>
