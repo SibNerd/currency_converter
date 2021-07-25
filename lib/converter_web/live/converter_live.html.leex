@@ -9,7 +9,7 @@
                 <button phx_click: "get_convertion">Конвертировать в рубли</button>
             </div><br>
         </label>
-        <%= if Map.has_key(@convertion_result, :amount) do %>
+        <%= if Map.has_key?(@convertion_result, :amount) do %>
           <output> <%= @convertion_result.amount %> <%= @convertion_result.name %> = <%= @convertion_result.roubles %> рублей.</output>
         <% else %>
           <output></output>
