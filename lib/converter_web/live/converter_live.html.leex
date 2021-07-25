@@ -9,7 +9,11 @@
                 <button phx_click: "get_convertion">Конвертировать в рубли</button>
             </div><br>
         </label>
-        <output> <%= @convertion_result.amount%> <%= @convertion_result.name%> = <%= @convertion_result.roubles %> рублей.</output>
+        <%= if @convertion_result do %>
+          <output> <%= @convertion_result.amount %> <%= @convertion_result.name %> = <%= @convertion_result.roubles %> рублей.</output>
+        <% else %>
+          <output></output>
+        <% end %>
     </form>
 </fieldset>
   

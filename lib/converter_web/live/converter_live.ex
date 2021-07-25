@@ -12,7 +12,7 @@ defmodule ConverterWeb.ConverterLive do
     socket = socket
       |> assign(:currencies, currencies)
       |> assign(:topic, topic)
-      |> assign(:convertion_result, 0)
+      |> assign(:convertion_result, %{})
     {:ok, socket}
   end
 
