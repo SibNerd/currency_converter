@@ -17,7 +17,7 @@ defmodule Converter.Currency do
   defp parse_json(_), do: :error
 
   defp pull_currencies(%{"Valute" => valute}) do
-    :ets.new(:currencies, [:named_table])
+    :ets.new(:currencies, [:named_table, :set, :protected])
       for {key, value} <- valute do
         :ets.insert(:currencies, {key, value})
       end
