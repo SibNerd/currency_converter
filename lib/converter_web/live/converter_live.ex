@@ -26,7 +26,7 @@ defmodule ConverterWeb.ConverterLive do
   end
   
   @impl true
-  def handle_event(%{event: "convertion", payload: result}, socket) do
+  def handle_info(%{event: "convertion", payload: result}, socket) do
     {:noreply, assign(socket, convertion_result: result)}
   end
 
