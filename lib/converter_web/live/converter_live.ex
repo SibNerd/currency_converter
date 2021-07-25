@@ -11,6 +11,7 @@ defmodule ConverterWeb.ConverterLive do
     ConverterWeb.Endpoint.subscribe(topic)
     socket = socket
       |> assign(:currencies, currencies)
+      |> assign(:topic, topic)
       |> assign(:convertion_result, 0)
     {:ok, socket}
   end
