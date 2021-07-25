@@ -20,7 +20,8 @@ defmodule ConverterWeb.ConverterLive do
   def handle_event("get_convertion", %{"converter" => %{"currency_amount" => amount, "currency_name" => name}}, socket) do
     currency = socket.assigns.currencies |> Enum.find(fn x -> x["Name"] == name end)
     value = currency["Value"]
-    result = value * String.to_integer(amount)
+    roubles = value * String.to_integer(amount) |> Float.round(4)
+    result = %{name, amount, roubles}
     ConverterWeb.Endpoint.broadcast(socket.assigns.topic, "convertion", result)
     {:noreply, socket}
   end
