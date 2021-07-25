@@ -1,1 +1,15 @@
-    Phoenix.View.render(ConverterWeb.PageLiveView, "page_live.html", assigns)
+    <%= c = form_for :converter, "#", phx_submit: :submit_convert %>
+        <form phx-change="currency_selected">
+            <select name="currency" id="select_currency">
+                <option value="">None</option>
+                <%= for currency <- @currencies do %>
+                    <option value="<%= currency["Name"] %>"
+                    <%= selected_attr(@currency, currency) %>
+                    >
+                    <%= currency["Name"] %>
+                    </option>
+                <% end %>
+            </select>
+        </form>
+        <%= nubmer_imput c, :input_value, placeholder: 1 %>
+    </form>
